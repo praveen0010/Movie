@@ -5,9 +5,12 @@ const cors = require('cors')
 const User=require('./User')
 const app=express()
 
-app.use(express.json());
-app.use(cors({ origin: '*' }));
 
+app.use(cors({ origin: ["https://deploy-mern-1whq.vercel.app"],
+             "methods":["POST","GET"],
+             "credentials:true
+             }));
+app.use(express.json());
 async function main(){
     await mongoose.connect('mongodb+srv://praveenkumar:QvvftRdNrB9DA0bk@cluster0.qvhdkub.mongodb.net/appdb?retryWrites=true&w=majority')    
     console.log('mongoose connected successfully');
