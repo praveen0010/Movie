@@ -16,7 +16,9 @@ async function main(){
     console.log('mongoose connected successfully');
 }
 main().catch ((error)=>{console.log(error)})
-
+app.get('/',asyncHandler(async(req,res)=>{
+  return res.send("Welcome Home")
+}))
 app.post('/signup', asyncHandler(async(req,res)=>{
     const client_name=req.body.name
     const client_email=req.body.email
