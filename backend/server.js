@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors({ origin: '*' }));
 
 async function main(){
-    await mongoose.connect('mongodb://localhost/appdb')    
+    await mongoose.connect('mongodb+srv://praveenkumar:QvvftRdNrB9DA0bk@cluster0.qvhdkub.mongodb.net/appdb?retryWrites=true&w=majority')    
     console.log('mongoose connected successfully');
 }
 main().catch ((error)=>{console.log(error)})
