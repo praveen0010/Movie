@@ -4,6 +4,7 @@ const asyncHandler = require('express-async-handler');
 const cors = require('cors')
 const User=require('./User')
 const app=express()
+const port = process.env.PORT || 1313;
 
 
 app.use(cors({ origin: ["https://deploy-mern-1whq.vercel.app"],
@@ -54,8 +55,8 @@ app.post('/login', asyncHandler(async(req,res)=>{
             }
     } ))
         
-app.listen(1313,()=>{
-    console.log('server is listen on 1313');
+app.listen(port,()=>{
+    console.log(`server is listen on ${port}`);
 })
         
 
